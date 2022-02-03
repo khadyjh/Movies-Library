@@ -21,7 +21,10 @@ then you need to open vs code to start coding by define the installed packages b
    then define the get method to send the data 
 
 when you want to run the server you need to run it from the terminal 
+when you want to delete record from table you must include the id with the req 
+when you want to update record from table you must include the id with the req and the data with the body of req 
 
 ## Project Features
 no features yet it just use the get method to send data to the user 
 use api to fitch data from it then send it to the browser using async methode like axios
+it support inserting retrieving ubdating and deleting from sql database 
