@@ -193,7 +193,7 @@ function deleteMH(req,res){
         res.status(200).send("the data deleted")
     })
 }
-
+//movie
 function getOneMHandel(req,res){
     let id=req.params.id;
     let sql1=`SELECT * FROM movies WHERE id=${id} ;`
