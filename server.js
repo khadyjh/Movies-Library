@@ -156,7 +156,7 @@ function handelAppendApi(req, res) {
 
 function handell(req,res){
     console.log(req.body);
-    let sql1=`INSERT INTO movies (title,release_date,poster_path,overview) VALUES ($1,$2,$3,$4) RETURNING *;`
+    let sql1=`INSERT INTO movie (title,release_date,poster_path,overview) VALUES ($1,$2,$3,$4) RETURNING *;`
     let values1=[req.body.title || " ",req.body.release_date || " ",req.body.poster_path || " ",req.body.overview || " "];
     client.query(sql1,values1).then((data)=>
     {
@@ -165,7 +165,7 @@ function handell(req,res){
 }
 
 function handelAdded(req,res){
-    let sql1=`SELECT * FROM movies;`
+    let sql1=`SELECT * FROM movie;`
     client.query(sql1).then(data =>{
         res.json(data.rows);
     })
@@ -175,7 +175,7 @@ function updateHandel(req,res){
    // console.log(req.params.id) 
     // console.log(req.body.rows)
     let id=req.params.id;
-    let sql=`UPDATE movies SET title=$1 ,release_date=$2, poster_path=$3, overview=$4 WHERE id=$5 RETURNING * ;`
+    let sql=`UPDATE movie SET title=$1 ,release_date=$2, poster_path=$3, overview=$4 WHERE id=$5 RETURNING * ;`
     let values=[req.body.title, req.body.release_date , req.body.poster_path , req.body.overview , id];
     client.query(sql,values).then((data)=>{
         // console.log(data)
@@ -188,7 +188,7 @@ function updateHandel(req,res){
 
 function deleteMH(req,res){
     let id=req.params.id;
-    let sql=`DELETE FROM movies WHERE id=${id};`
+    let sql=`DELETE FROM movie WHERE id=${id};`
     client.query(sql).then(()=>{
         res.status(200).send("the data deleted")
     })
@@ -196,7 +196,7 @@ function deleteMH(req,res){
 //movie
 function getOneMHandel(req,res){
     let id=req.params.id;
-    let sql1=`SELECT * FROM movies WHERE id=${id} ;`
+    let sql1=`SELECT * FROM movie WHERE id=${id} ;`
     client.query(sql1).then(data =>{
         res.json(data.rows);
     })
