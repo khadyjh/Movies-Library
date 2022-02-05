@@ -19,8 +19,15 @@ then you need to open vs code to start coding by define the installed packages b
    - const server=express();
 
    then define the get method to send the data 
+   if you want to send data you need to define post method with insert operation 
+   if you want to retrieve data you need to define get method with select operation 
+   if you want to delete data you need to define delete method with delete operation 
+   if you want to select or upadate or delete specific record you should include the id .
+
+
 
 when you want to run the server you need to run it from the terminal 
+
 
 ## Project Features
 no features yet it just use the get method to send data to the user 

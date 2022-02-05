@@ -116,7 +116,7 @@ function handelSearchApi(req, res) {
 
 
 function handelAppendApi(req, res) {
-    let newUrl1 = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.APIKEY}&sort_by=popularity.asc`;
+    let newUrl1 = `https://api.themoviedb.org/3/movie/157336?api_key=${process.env.APIKEY}&append_to_response=videos,images`;
 
     axios.get(newUrl1).then(result => {
 
@@ -143,10 +143,20 @@ function handelAppendApi(req, res) {
 //         })
 // }
 
+// function handell(req,res){
+//     console.log(req.body);
+//     let sql1=`INSERT INTO movie (title,release_date,poster_path,overview) VALUES ($1,$2,$3,$4) RETURNING *;`
+//     let values1=[req.body.title,req.body.release_date,req.body.poster_path,req.body.overview];
+//     client.query(sql1,values1).then((data)=>
+//     {
+//         res.json(data.rows);
+//     })
+// }
+
 function handell(req,res){
     console.log(req.body);
     let sql1=`INSERT INTO movie (title,release_date,poster_path,overview) VALUES ($1,$2,$3,$4) RETURNING *;`
-    let values1=[req.body.title,req.body.release_date,req.body.poster_path,req.body.overview];
+    let values1=[req.body.title || " ",req.body.release_date || " ",req.body.poster_path || " ",req.body.overview || " "];
     client.query(sql1,values1).then((data)=>
     {
         res.json(data.rows);
