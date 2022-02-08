@@ -24,6 +24,8 @@ if you want to use the Movies Library progect first of all you have to clone it 
 
 
 
+
 ## Project Features
 no features yet it just use the get method to send data to the user 
 use api to fitch data from it then send it to the browser using async methode like axios
+it support inserting retrieving ubdating and deleting from sql database 
