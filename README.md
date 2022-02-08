@@ -1,34 +1,28 @@
 # Movies-Library
 
-# Movies-Library - 02v
+# Movies-Library - 03v
 
 **Author Name**: khadyjh AL-abbadi
 
 ## WRRC
-![wrrc](wrrc01.jfif)
+![wrrc](wrrc033.png)
 
 ## Overview
 
 ## Getting Started
-first you need to clone it in your local machine then install the required packages from the terminal using npm command 
-then you need to open vs code to start coding by define the installed packages by using require() method 
- -  const express=require('express');
-  - const cors=require('cors'); 
-
-   then create server using the express by:
-   - const server=express();
-
-   then define the get method to send the data 
-   if you want to send data you need to define post method with insert operation 
-   if you want to retrieve data you need to define get method with select operation 
-   if you want to delete data you need to define delete method with delete operation 
-   if you want to select or upadate or delete specific record you should include the id .
 
 
+if you want to use the Movies Library progect first of all you have to clone it in your device then follow this steps:
+- install required package using npm install 
+- then run the servsr in your device 
+- then you can use the browser to test if it work 
+- the git method will run on the browser using localhost with the port you run the server in 
+- but to run the other method you should use postman app
+- (/,/favorite,/search,/trending,/language,/append) to run thise rout in postman you should choose the get method then put the url then send it .
+- (/addMovie) well add new movie to the local database // to use thise rout in postman you should choose the post method then the body choose row thin json after that you need to write movie object you want to add in the body then put the url then send it . 
+- (/getMovies) well get the added movies from the database //  to run thise rout in postman you should choose the get method then put the url then send it .
 
-when you want to run the server you need to run it from the terminal 
-when you want to delete record from table you must include the id with the req 
-when you want to update record from table you must include the id with the req and the data with the body of req 
+
 
 
 ## Project Features
